@@ -4,6 +4,7 @@ import argparse
 import os
 import logging
 
+
 class QRCodeGenerator:
     def __init__(self, qr_data, qr_path, logo_path=None, comment=None, font_path=None, font_size=16):
         self.qr_data = qr_data
@@ -65,6 +66,7 @@ class QRCodeGenerator:
         except Exception as e:
             logging.error(f"生成二维码时发生错误：{e}")
 
+
 def parse_args():
     parser = argparse.ArgumentParser(description="Generate a QR code with optional logo and text.")
     parser.add_argument("qr_data", help="二维码内容")
@@ -74,6 +76,7 @@ def parse_args():
     parser.add_argument("--font_path", default=None, help="二维码嵌入文字的字体路径，可选参数")
     parser.add_argument("--font_size", type=int, default=16, help="二维码嵌入文字大小，可选参数")
     return parser.parse_args()
+
 
 if __name__ == "__main__":
     args = parse_args()
